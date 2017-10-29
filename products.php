@@ -110,6 +110,34 @@ if (!isset($_SESSION['id']))
                 ?>
                 </table>  
             <hr>
+                                                                                                //updated here
+             <div class="row text-center" id="cameras">
+                     <?php
+                        $queryt="Select * from items where status='Ongoing'";
+                        $result= mysqli_query($con, $queryt);
+                         while($fetch= mysqli_fetch_array($result))
+                         {
+                     ?>
+                <div class="col-md-3 col-sm-6 home-feature" style="margin-left:7%">
+                    <div class="thumbnail">
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode( $fetch['item_image']); ?>" alt="" style="height:30%;width: 100%;">
+                        <div class="caption">
+                            <h3><?php echo $fetch['item_name'] ?> </h3>
+                            <p> <b>Max Bid: Rs. <?php echo $fetch['max_price']?> </b></p>
+                        <?php if (!isset($_SESSION['id'])) { ?>
+                            <p><a href="login.php" role="button" class="btn btn-primary btn-block">Bid Now</a></p> 
+                                <?php } else 
+                                    {
+                                        ?> 
+                            <a href="cart-add.php?id=1" name="add" value="add" class="btn btn-block btn-primary">Bid Now</a> 
+                                <?php }  ?>    
+                        </div>
+                    </div>
+                </div>
+                     <?php
+                     }
+                     ?>
+                     </div>
         </div>        
         <br><br><br><br><br>
         <?php 
