@@ -27,7 +27,7 @@
                         <div id="banner-content">
                                   <h1>Bidding Portal</h1>
                                         <p>Ab Sab Kuch Bikega</p>
-                            <a href="products.php" class="btn btn-danger btn-lg active">
+                            <a href="index.php" class="btn btn-danger btn-lg active">
                             Start Trading    
                           </a>    
                         </div>
