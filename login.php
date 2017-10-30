@@ -11,7 +11,8 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-       
+        <script type="text/javascript" src="js/script.js"></script>
+        
  </head>
     <body>
         <?php 
@@ -27,17 +28,19 @@
                     </div>
                     <div class="panel-body">
                     <p class="text-warning">Login to make a purchase</p><br>
-                    <form method="POST" action="login_submit.php">
+                    <form method="POST" action="" id="login">
                         <div class="form-group">
                             Email:
-                        <input type="email" class="form-control" name="email" placeholder="Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">    
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">    
                         </div>
                         <div class="form-group">
                             Password:
-                        <input type="password" class="form-control" name="password" placeholder="password " required="true">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password " required="true">
                         </div><br>
-                        <button type="submit" class="btn btn-primary" name="submit">Login</button><br><br>
+                        <input type="submit" class="btn btn-primary" id="submit" name="submit" value="LOGIN"><br><br>
                     </form>
+                    <div id="invalid2"></div>
+                    <?php sleep(2)?>
                         <div class="panel-footer">
                             <p> Don't have an account ?<a href="signup.php">Register</a></p>
                             </div>

@@ -4,23 +4,27 @@
     $email= mysqli_real_escape_string($con,$_POST['email']);
     $password=mysqli_real_escape_string($con,$_POST['password']);
     $password= md5($password);
-    $query= "SELECT user_email,user_id FROM users WHERE user_password = '$password' AND user_email ='$email' ";
+    $query= "SELECT * FROM users WHERE  user_email ='$email' ";
     $submit_query= mysqli_query($con, $query);
     $rows= mysqli_num_rows($submit_query);
+    $info= mysqli_fetch_array($submit_query);
     if($rows==0)
     {
-        echo "User doesn't exist";
+        echo "<span id=invalid2>User doesn't exist</span>";
     }
-    else
+    else if($password!=$info['user_password'])
     {
-        $info= mysqli_fetch_array($submit_query);
-        $_SESSION['email']=$info['email'];
+         echo "<span id=invalid2>Incorrect password</span>";
+    }      
+    else
+    { 
+        $_SESSION['email']=$info['user_email'];
         $_SESSION['id']=$info['user_id'];
-        if (isset($_SESSION['id'])) 
-            { 
-                header('location: products.php'); 
+        //if (isset($_SESSION['id'])) 
+          //  { 
+            //    header('location: products.php'); 
                 
-            }
+            //}
         
     }
     
