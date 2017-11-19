@@ -2,7 +2,7 @@
     require 'include/common.php';
 ?>
 <?php 
-    if (isset($_SESSION['email'])) { header('location: products.php'); }
+    if (isset($_SESSION['id'])) { header('location: products.php'); }
 ?>
 <html>
     <head>
@@ -27,7 +27,7 @@
                         <div id="banner-content">
                                   <h1>Bidding Portal</h1>
                                         <p>Ab Sab Kuch Bikega</p>
-                            <a href="index.php" class="btn btn-danger btn-lg active">
+                            <a href="products.php" class="btn btn-danger btn-lg active">
                             Start Trading    
                           </a>    
                         </div>
