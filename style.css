@@ -56,3 +56,22 @@ footer {
 {
     color:red;
 }
+#itemimage{
+    height:60%;
+    width: 35%;
+    margin-top: 9.5%;
+    margin-left: 5%;
+    
+
+}
+#itemdescription{  
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 2%;
+    height:60%;
+    width: 50%;
+}
+#basic{
+    text-align: center;
+    margin:20% 20% 20% 30% ;
+}
